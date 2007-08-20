@@ -13,7 +13,7 @@ Source0:	%{modname}-%{version}.tar.bz2
 URL:		http://cpan.valueclick.com/authors/id/SKIMO/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	perl
-BuildRequires:	perl, perl-devel
+BuildRequires:	perl-devel
 
 %description
 This is a Fast CGI module for perl. It's based on the FCGI module that
