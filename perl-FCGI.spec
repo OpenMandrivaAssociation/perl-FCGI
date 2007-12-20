@@ -11,6 +11,7 @@ License:	Distributable
 Group:		Development/Perl
 Source0:	%{modname}-%{version}.tar.bz2
 URL:		http://cpan.valueclick.com/authors/id/SKIMO/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	perl
 BuildRequires:	perl-devel
 
