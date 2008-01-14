@@ -1,7 +1,7 @@
 %define modname	FCGI
 %define name	perl-%{modname}
 %define version	0.67
-%define release %mkrel 6
+%define release %mkrel 7
 
 Summary:	A Fast CGI module for Perl
 Name:		%{name}
