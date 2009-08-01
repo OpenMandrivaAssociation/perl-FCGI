@@ -1,19 +1,18 @@
-%define modname	FCGI
-%define name	perl-%{modname}
-%define version	0.67
-%define release %mkrel 8
+%define upstream_name	 FCGI
+%define upstream_version 0.67
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	A Fast CGI module for Perl
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Distributable
 Group:		Development/Perl
-Source0:	%{modname}-%{version}.tar.bz2
-URL:		http://cpan.valueclick.com/authors/id/SKIMO/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-Requires:	perl
+Url:		http://cpan.valueclick.com/authors/id/SKIMO/
+Source0:	%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is a Fast CGI module for perl. It's based on the FCGI module that
@@ -25,7 +24,7 @@ Lincoln D. Stein's perl CGI module also contains some information
 about fastcgi programming.
 
 %prep
-%setup -q -n %{modname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 chmod 0644 LICENSE.TERMS
 
 %build
@@ -48,5 +47,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/*/*
 %{perl_vendorarch}/FCGI*
 %{perl_vendorarch}/auto/FCGI
-
-
