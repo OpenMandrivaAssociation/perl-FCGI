@@ -1,5 +1,5 @@
 %define upstream_name	 FCGI
-%define upstream_version 0.67
+%define upstream_version 0.68
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	A Fast CGI module for Perl
 License:	Distributable
 Group:		Development/Perl
 Url:		http://cpan.valueclick.com/authors/id/SKIMO/
-Source0:	%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
