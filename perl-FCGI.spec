@@ -1,9 +1,9 @@
 %define upstream_name	 FCGI
-%define upstream_version 0.71
+%define upstream_version 0.72
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    %mkrel 1
 
 Summary:	A Fast CGI module for Perl
 License:	Distributable
