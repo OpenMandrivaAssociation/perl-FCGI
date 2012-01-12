@@ -1,18 +1,15 @@
 %define upstream_name	 FCGI
-%define upstream_version 0.73
-
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+%define upstream_version 0.74
 
 Summary:	A Fast CGI module for Perl
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	1
 License:	Distributable
 Group:		Development/Perl
-Url:		http://cpan.valueclick.com/authors/id/SKIMO/
-Source0:	%{upstream_name}-%{upstream_version}.tar.gz
-
+URL:		http://search.cpan.org/~flora/
+Source0:	http://search.cpan.org/CPAN/authors/id/F/FL/FLORA/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is a Fast CGI module for perl. It's based on the FCGI module that
@@ -36,13 +33,10 @@ EOF
 
 %install
 rm -rf %{buildroot}
+
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README LICENSE.TERMS ChangeLog
 %{_mandir}/*/*
 %{perl_vendorarch}/FCGI*
