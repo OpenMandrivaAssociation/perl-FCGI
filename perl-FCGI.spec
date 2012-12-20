@@ -1,14 +1,14 @@
-%define upstream_name	 FCGI
-%define upstream_version 0.74
+%define	module	FCGI
+%define	modver	0.74
 
 Summary:	A Fast CGI module for Perl
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Name:		perl-%{module}
+Version:	%{perl_convert_version %{modver}}
+Release:	4
 License:	Distributable
 Group:		Development/Perl
 URL:		http://search.cpan.org/~flora/
-Source0:	http://search.cpan.org/CPAN/authors/id/F/FL/FLORA/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/F/FL/FLORA/%{module}-%{modver}.tar.gz
 BuildRequires:	perl-devel
 
 %description
@@ -21,19 +21,17 @@ Lincoln D. Stein's perl CGI module also contains some information
 about fastcgi programming.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{module}-%{modver}
 chmod 0644 LICENSE.TERMS
 
 %build
 # Choose not to build a pure Perl implementation
 # (default answer [n] -> return)
-%{__perl} Makefile.PL INSTALLDIRS=vendor <<EOF
+perl Makefile.PL INSTALLDIRS=vendor <<EOF
 EOF
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 
 %files
@@ -42,8 +40,10 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/FCGI*
 %{perl_vendorarch}/auto/FCGI
 
-
 %changelog
+* Thu Dec 20 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.740.0-4
+- rebuild for new perl-5.16.2
+
 * Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.740.0-3
 + Revision: 765235
 - rebuilt for perl-5.14.2
