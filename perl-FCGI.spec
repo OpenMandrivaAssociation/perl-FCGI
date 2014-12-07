@@ -4,7 +4,7 @@
 Summary:	A Fast CGI module for Perl
 Name:		perl-%{module}
 Version:	%{perl_convert_version %{modver}}
-Release:	13
+Release:	14
 License:	Distributable
 Group:		Development/Perl
 Url:		http://search.cpan.org/~flora/
