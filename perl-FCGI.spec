@@ -1,10 +1,10 @@
 %define	module	FCGI
-%define	modver	0.74
+%define	modver	0.78
 
 Summary:	A Fast CGI module for Perl
 Name:		perl-%{module}
-Version:	%{perl_convert_version %{modver}}
-Release:	16
+Version:	%perl_convert_version %{modver}
+Release:	1
 License:	Distributable
 Group:		Development/Perl
 Url:		http://search.cpan.org/~flora/
@@ -22,7 +22,7 @@ about fastcgi programming.
 
 %prep
 %setup -qn %{module}-%{modver}
-chmod 0644 LICENSE.TERMS
+chmod 0644 LICENSE META.json META.ym
 
 %build
 # Choose not to build a pure Perl implementation
@@ -35,7 +35,7 @@ EOF
 %makeinstall_std
 
 %files
-%doc README LICENSE.TERMS ChangeLog
+%doc ChangeLog META.json META.yml README
 %{perl_vendorarch}/FCGI*
 %{perl_vendorarch}/auto/FCGI
 %{_mandir}/man3/*
