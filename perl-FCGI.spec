@@ -35,7 +35,7 @@ EOF
 %makeinstall_std
 
 %files
-%doc ChangeLog META.json META.yml README
+%doc ChangeLog META* README
 %{perl_vendorarch}/FCGI*
 %{perl_vendorarch}/auto/FCGI
 %{_mandir}/man3/*
