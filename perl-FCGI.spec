@@ -4,7 +4,7 @@
 Summary:	A Fast CGI module for Perl
 Name:		perl-%{module}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	3
 License:	Distributable
 Group:		Development/Perl
 Url:		http://search.cpan.org/~flora/
@@ -22,7 +22,7 @@ about fastcgi programming.
 
 %prep
 %setup -qn %{module}-%{modver}
-chmod 0644 LICENSE META.json META.ym
+chmod 0644 LICENSE META.json META*
 
 %build
 # Choose not to build a pure Perl implementation
