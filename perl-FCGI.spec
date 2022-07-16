@@ -1,14 +1,19 @@
 %define	module	FCGI
-%define	modver	0.78
+%define	modver	0.82
+
+%ifarch %{x86_64}
+# Workaround for bug in debugsource generator
+%global _debugsource_template %{nil}
+%endif
 
 Summary:	A Fast CGI module for Perl
 Name:		perl-%{module}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	1
 License:	Distributable
 Group:		Development/Perl
-Url:		http://search.cpan.org/~flora/
-Source0:	http://search.cpan.org/CPAN/authors/id/F/FL/FLORA/%{module}-%{modver}.tar.gz
+Url:		https://metacpan.org/dist/FCGI
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/FCGI-%{modver}.tar.gz
 BuildRequires:	perl-devel
 
 %description
@@ -29,14 +34,13 @@ chmod 0644 LICENSE META.json META*
 # (default answer [n] -> return)
 perl Makefile.PL INSTALLDIRS=vendor <<EOF
 EOF
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc ChangeLog META* README
 %{perl_vendorarch}/FCGI*
 %{perl_vendorarch}/auto/FCGI
 %{_mandir}/man3/*
-

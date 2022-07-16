@@ -1,4 +1,2 @@
-removed_sources:
-  FCGI-0.74.tar.gz: a0bf4d6537ffc7141b4b0148f7fdbc7354d5d642
 sources:
-  FCGI-0.78.tar.gz: dbc2c4180656bbce87d06d0a6f28e46d6fb71b30
+  FCGI-0.82.tar.gz: 14ccc21bcf83328a311522a1a2313da00a68a718
