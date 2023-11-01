@@ -1,20 +1,20 @@
-%define	module	FCGI
-%define	modver	0.82
+%undefine _debugsource_packages
 
-%ifarch %{x86_64}
-# Workaround for bug in debugsource generator
-%global _debugsource_template %{nil}
-%endif
+%define	module	FCGI
+%define	version	0.82
 
 Summary:	A Fast CGI module for Perl
 Name:		perl-%{module}
-Version:	%perl_convert_version %{modver}
-Release:	2
+Version:	0.82
+Release:	1
 License:	Distributable
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/FCGI
-Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/FCGI-%{modver}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/FCGI-%{version}.tar.gz
 BuildRequires:	perl-devel
+
+# **** perl_convert_version
+Obsoletes:	%{name} = 0.820.0-1
 
 %description
 This is a Fast CGI module for perl. It's based on the FCGI module that
@@ -26,7 +26,7 @@ Lincoln D. Stein's perl CGI module also contains some information
 about fastcgi programming.
 
 %prep
-%setup -qn %{module}-%{modver}
+%autosetup -p1 -n %{module}-%{version}
 chmod 0644 LICENSE META.json META*
 
 %build
