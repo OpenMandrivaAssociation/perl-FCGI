@@ -6,7 +6,7 @@
 Summary:	A Fast CGI module for Perl
 Name:		perl-%{module}
 Version:	0.82
-Release:	1
+Release:	2
 License:	Distributable
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/FCGI
