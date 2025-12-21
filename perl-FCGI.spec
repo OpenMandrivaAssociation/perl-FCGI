@@ -11,6 +11,7 @@ License:	Distributable
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/FCGI
 Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/FCGI-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	perl-devel
 
 # **** perl_convert_version
